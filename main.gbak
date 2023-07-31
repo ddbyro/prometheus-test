@@ -1,0 +1,25 @@
+package main
+
+import (
+	"fmt"
+	"io"
+	"log"
+	"net/http"
+)
+
+var query = "http://localhost:9090/api/v1/query?query=sum(sum_over_time(probe_success{instance=~\".*\"}[24h])) / sum(count_over_time(probe_success{instance=~\".*\"}[24h])) * 100"
+
+func main() {
+	resp, err := http.Head("http://localhost:9090/api/v1/query?query=sum(sum_over_time(probe_success{instance=~\".*\"}[24h])) / sum(count_over_time(probe_success{instance=~\".*\"}[24h])) * 100")
+
+	if err != nil {
+		log.Fatal(err)
+
+	}
+
+	defer resp.Body.Close()
+	bodyBytes, err := io.ReadAll(resp.Body)
+
+	fmt.Printf(string(bodyBytes))
+
+}
