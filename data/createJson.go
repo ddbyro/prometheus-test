@@ -11,7 +11,7 @@ type myJSON struct {
 	Array []string
 }
 
-func Create_json() {
+func CreateJson() {
 	currentTime := time.Now()
 	year := currentTime.Year()
 	month := currentTime.Month()

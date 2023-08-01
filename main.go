@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-	app.Get_uptime_data()
-	//data.Create_json()
-	//data.Get_date()
+	app.GetUptimeData()
+	//data.CreateJson()
+	//data.GetDate()
 }

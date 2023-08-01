@@ -10,7 +10,7 @@ import (
 	"time"
 )
 
-func Get_uptime_data() {
+func GetUptimeData() {
 	client, err := api.NewClient(api.Config{
 		Address: "http://localhost:9090",
 	})
