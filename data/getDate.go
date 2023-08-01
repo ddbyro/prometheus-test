@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-func Get_date() {
+func GetDate() {
 	currentTime := time.Now()
 	fmt.Println("Year   :", currentTime.Year())
 	fmt.Println("Month  :", currentTime.Month())
